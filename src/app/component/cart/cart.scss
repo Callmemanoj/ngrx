@@ -1,0 +1,78 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2000;
+}
+
+.modal {
+  padding-left: 15px;
+  width: 380px;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.cart-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.cart-item-info {
+  width: 100% !important;
+}
+
+.cart-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.price,
+.qty {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.remove-btn {
+
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  float: right;
+}

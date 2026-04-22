@@ -1,0 +1,16 @@
+
+<header class="header">
+  <div class="logo">
+    🛍 <span>ShoppingCart</span>
+  </div>
+
+  <div class="actions">
+    <button class="cart-btn" (click)="openCart()">
+      🛒
+      <span class="badge" *ngIf="cartCount > 0">
+        <!-- {{ cartCount }} -->
+        {{cartCount$ | async }}
+      </span>
+    </button>
+  </div>
+</header>

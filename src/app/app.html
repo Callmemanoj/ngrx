@@ -1,0 +1,9 @@
+<div class="main-wrapper">
+<app-header [cartCount]="3" (cartClicked)="openCart()"></app-header>
+<app-product></app-product>
+
+<app-cart *ngIf="isCartOpened" (cartClose)="closeCart()"></app-cart>
+</div>
+
+
+<router-outlet />

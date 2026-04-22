@@ -1,0 +1,51 @@
+<div class="overlay">
+    <div class="modal">
+
+        <!-- Header -->
+        <div class="modal-header">
+            <h2>Your Shopping Cart</h2>
+            <button class="close-btn" (click)="cartClose.emit()">✕</button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+
+
+            <ng-container *ngIf="cartItems$ | async as items">
+
+                <!-- Empty state -->
+                <p class="empty" *ngIf="items.length === 0">
+                    Your cart is empty.
+                </p>
+
+                <!-- Cart items -->
+                <div class="cart-list" *ngIf="items.length > 0">
+                    <li class="cart-item" *ngFor="let item of items">
+
+                        <img *ngIf="item.image" [src]="item.image" [alt]="item.name" class="cart-image" />
+
+                        <div class="cart-item-info">
+                            <h4 class="name">{{ item.name }}</h4>
+                            <p class="price">Unit Price: ₹{{ item.price }}</p>
+                            <p class="qty">Qty: {{ item.quantity }}</p>
+                            <p class="total">
+                                Total: ₹{{ item.price * item.quantity }}
+                            </p>
+
+                            <button class="remove-btn" (click)="removeFromCart(item.id)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+
+                    </li>
+                </div>
+
+            </ng-container>
+        </div>
+
+        <p class="price">
+            Your cart total: ₹{{ cartTotal$ | async }}
+        </p>
+
+    </div>
+</div>

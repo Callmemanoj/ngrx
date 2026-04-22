@@ -1,0 +1,49 @@
+
+.header {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+}
+
+.logo span {
+  margin-left: 6px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.cart-btn {
+  position: relative;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #ff3b30;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
