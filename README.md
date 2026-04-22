@@ -1,0 +1,2 @@
+# ngrx
+Ngrx store management
