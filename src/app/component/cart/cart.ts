@@ -3,11 +3,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, startWith } from 'rxjs';
 import { selectCartItems, selectCartTotal, } from '../../store/cart.selectors';
-import { Products } from '../../models/product.model';
 import { CartState } from '../../store/cart.reducer';
 import { removeFromCart } from '../../store/cart.actions';
 import { CartItem } from '../../models/cart.model';
-import { start } from 'repl';
 
 @Component({
   selector: 'app-cart',

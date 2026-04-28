@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "shoppingcart-5fcc7",
+    "staging": "manoj-test-a9d27"
+  },
+  "targets": {
+    "manoj-test-a9d27": {
+      "hosting": {
+        "main": [
+          "manoj-test-a9d27"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
