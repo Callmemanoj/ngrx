@@ -5,5 +5,10 @@
 <app-cart *ngIf="isCartOpened" (cartClose)="closeCart()"></app-cart>
 </div>
 
+<button class="chat-btn" (click)="openChat()">
+  Chat Now
+</button>
+
+<app-chat *ngIf="isChatOpened" (chatClose)="closeChat($event)"></app-chat>  
 
 <router-outlet />

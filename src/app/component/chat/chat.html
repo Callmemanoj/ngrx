@@ -1,0 +1,39 @@
+<div class="chat-overlay">
+  <div class="chat-box">
+    <div class="chat-header">
+      <span>Chat here</span>
+      <button class="close-btn" (click)="closeChat()">×</button>
+    </div>
+
+    
+    <div class="chat-body">
+
+        <ng-container *ngFor="let chat of chatHistory">
+                  <div class="message incoming" *ngIf="chat.from === 'gemini'">
+        <p>{{ chat.message }}</p>
+      </div>
+         <div class="message outgoing" *ngIf="chat.from === 'user'">
+        <p>{{ chat.message }}</p>
+      </div>
+        </ng-container>
+
+      <!-- <div class="message incoming">
+        <p>Hello! How can I help you today?</p>
+      </div>
+      <div class="message outgoing">
+        <p>I want to ask about my order.</p>
+      </div> -->
+      <!-- Add dynamic chat messages here -->
+    </div>
+
+    <form class="chat-input" (submit)="sendMessage()">
+      <input
+        type="text"
+        placeholder="Type a message..."
+        [(ngModel)]="messageText"
+        name="chatMessage"
+      />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>

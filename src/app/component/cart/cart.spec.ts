@@ -4,7 +4,7 @@ import { provideStore } from '@ngrx/store';
 import { Cart } from './cart';
 import { cartReducer } from '../../store/cart.reducer';
 
-describe('Cart', () => {
+describe.only('Cart', () => {
   let component: Cart;
   let fixture: ComponentFixture<Cart>;
 
