@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { GoogleGenerativeAI, FunctionDeclaration, SchemaType } from '@google/generative-ai';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -27,7 +27,7 @@ export class Gemini {
     }
   ];
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<AppState>, private ngZone: NgZone) {
     this.generativeAI = new GoogleGenerativeAI('AIzaSyCvoH5fxxcS6MaI6O7iFenyqgblAnUG_PE');
   }
 
@@ -70,7 +70,7 @@ export class Gemini {
     }
 
     const text = result.response.text();
-    this.messageHistory.next({ from: 'gemini', message: text });
+    this.ngZone.run(() => this.messageHistory.next({ from: 'gemini', message: text }));
     return text;
   }
 
