@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "target": "main",
     "public": "dist/shoppingCart/browser",
     "ignore": [
       "firebase.json",
